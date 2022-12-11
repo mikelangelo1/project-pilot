@@ -67,10 +67,10 @@ const Gallery = ({ imageListUrl, deleteUrl, addUrl }: GalleryPropType) => {
       .finally(() => setLoadingStatus(false));
   };
 
-  useEffect(() => {
-    if (!data || !data?.data?.length) return;
-    setImages(data.data);
-  }, [data]);
+  // useEffect(() => {
+  //   if (!data || !data?.data?.length) return;
+  //   setImages(data.data);
+  // }, [data]);
 
   return (
     <>
