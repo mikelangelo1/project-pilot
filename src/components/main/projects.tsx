@@ -17,8 +17,8 @@ interface ProjectsPropType {
 }
 
 const Projects = ({ status }: ProjectsPropType) => {
-  const data = {}
-  // const { data } = useSWR(ProjectsUrl);
+  // const data = {}
+  const { data } = useSWR(ProjectsUrl);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [initialValues, setInitialValues] = useState<any>(null);
   const [projects, setProjects] = useState<ListerProject[]>([]);

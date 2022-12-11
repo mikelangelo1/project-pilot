@@ -20,8 +20,8 @@ const ListerProfileDetails = ({
   updateProfileLink,
   reRouteLink,
 }: ListerProfilePropType) => {
-  // const { data } = useSWR(GetUserDetailsUrl);
-  const data = {}
+  const { data } = useSWR(GetUserDetailsUrl);
+  // const data = {}
 
   const { setLoadingStatus } = useLoading();
   const [form] = Form.useForm();

@@ -16,9 +16,9 @@ import {
 import Editor from "./editor";
 
 const Profile = () => {
-  // const { data } = useSWR(GetUserDetailsUrl);
+  const { data } = useSWR(GetUserDetailsUrl);
 
-  const data = {}
+  // const data = {}
 
   const [profileInfo, setProfileInfo] = useState<ProfileInfo>(dummyProfileInfo);
   const [userPayload, setUserPayload] = useState<ListerUser | null>(null);
