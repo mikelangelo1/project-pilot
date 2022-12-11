@@ -20,8 +20,8 @@ interface EditorPropType {
 const Editor = ({ setContentUrl }: EditorPropType) => {
   const { setLoadingStatus } = useLoading();
 
-  const data = undefined
-  // const { data } = useSWR(GetUserDetailsUrl);
+  // const data = undefined
+  const { data } = useSWR(GetUserDetailsUrl);
 
   const [content, setContent] = useState<string>(DefaultFul());
   useEffect(() => {
