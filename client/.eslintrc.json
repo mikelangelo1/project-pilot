@@ -1,0 +1,26 @@
+{
+  "extends":[ "next/core-web-vitals", "airbnb"],
+  "rules": {
+    "quotes":"off",
+    "jsx-quotes":"off",
+    "import/extensions": "off",
+    "no-multiple-empty-lines":"off",
+   "react/function-component-definition": "off",
+   "react/prop-types":"off",
+   "react/jsx-filename-extension":"off",
+    "react/react-in-jsx-scope":"off",
+    "operator-linebreak": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/self-closing-comp": "off",
+    "react/require-default-props": "off",
+    "consistent-return": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "no-param-reassign": "off",
+    "react/jsx-props-no-spreading":"off",
+    "react/jsx-boolean-value":"off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "comma-dangle":"off",
+    "linebreak-style":"off"
+  }
+}

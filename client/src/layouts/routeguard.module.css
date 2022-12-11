@@ -1,0 +1,19 @@
+.overlay{
+    position: absolute;
+    background-color: rgba(27, 27, 27, 0.3);
+    right: 0;
+    top:0;
+    left:0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn{
+    background-color: #fff;
+    border-radius: 5px;
+    color: #000;
+    padding: 9px;
+}
