@@ -7,14 +7,26 @@ import { useSelector } from 'react-redux'
 
 import classes from './routeguard.module.css'
 
+type RootState = {
+    user: {
+        login: string,
+        isAuth: boolean,
+        loggedIn: boolean,
+        
+    },
+    _persist: {
+        rehydrated: boolean
+    }
+}
+
 const RouteGuard = (props) => {
     const router = useRouter();
     const [authorized, setAuthorized] = React.useState(false);
 
     const { children } = props
 
-    const userReducer = useSelector(state => state.user);
-    const persistState = useSelector(state => state['_persist'])
+    const userReducer = useSelector((state: RootState) => state.user);
+    const persistState = useSelector((state: RootState) => state['_persist'])
 
     React.useEffect(() => {
         // on initial load - run auth check

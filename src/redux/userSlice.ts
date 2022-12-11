@@ -2,7 +2,7 @@ import { createSlice, createAction, createStore } from "@reduxjs/toolkit";
 import moment from "moment";
 
 import axios from "axios";
-import { staticConfigs } from "../../utils/configs";
+// import { staticConfigs } from "../../utils/configs";
 
 export type userState = {
   loggedIn: boolean;
@@ -20,7 +20,9 @@ export type userData = {
 
 let initialState: userState = {
   loggedIn: false,
-  userData: null,
+  userData: undefined,
+  loginTime: Date.now().toString(),
+  rememberMe: false,
   //
 };
 
@@ -42,10 +44,10 @@ export const userSlice = createSlice({
     refreshTokenSuccess: (state, action) => {
       let token = action.payload;
 
-      state.userData = {
-        ...state.userData,
-        token,
-      };
+      // state.userData = {
+      //   ...state.userData,
+      //   token,
+      // };
     },
   },
 });

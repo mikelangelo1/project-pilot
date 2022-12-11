@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { AnyAction, combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 
 import { persistStore, persistReducer } from "redux-persist";
@@ -7,13 +7,14 @@ import storage from "redux-persist/lib/storage";
 import { createWrapper, Context, HYDRATE } from "next-redux-wrapper";
 
 import { userSlice } from "./userSlice";
+import { State } from "../models/dependencies";
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,
 });
 
 const reducer = (
-  state: ReturnType<typeof combinedReducer>,
+  state,
   action: AnyAction
 ) => {
   if (action.type === HYDRATE) {
@@ -56,7 +57,7 @@ const makeStore = () => {
         immutableCheck: false,
       }),
   });
-  store.__persisitor = persistStore(store);
+  // store.__persisitor = persistStore(store);
 
   return store;
 };
@@ -64,4 +65,4 @@ const makeStore = () => {
 type Store = ReturnType<typeof makeStore>;
 
 // export an assembled wrapper
-export const wrapper = createWrapper<Store<State>>(makeStore);
+export const wrapper = createWrapper(makeStore, {debug: true});
